@@ -13,10 +13,10 @@ div.letterBox p.letter{
     color: white;
 } 
 
-div.correct{
+div.green{
     background-color: rgb(84, 175, 30);
 }
 
-div.wrongPos{
+div.yellow{
     background-color: rgb(204, 207, 0);
 }

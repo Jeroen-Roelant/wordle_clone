@@ -10,9 +10,20 @@ export class LetterBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   @Input() letter: string = "";
-  @Input() status: number = 1;
+  @Input() correctLetter: string = "";
+
+  status: number = 0;
+
+  checkLetter() {
+    if (this.letter == this.correctLetter) {
+      this.status = 1;
+    } else {
+      this.status = 2;
+    }
+  }
 
 }
