@@ -5,11 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class GameServiceService {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
     this.currentWord = this.getWord();
+
   }
+
+  // ngOnInit(): void {
+  //   this.currentWord = this.getWord();
+  // }
 
   words: string[] = ["APPLE","BEARS","CATCH","DOZER","EAGER","FAITH","GHOST","HUMOR","IVORY","JUMBO","KNOCK","LEMON","MAGIC","NIGHT","OASIS","PUNCH","QUICK","RAVEN","SALAD","TANGO","UNDER","VIVID","WHALE","XENON","YACHT","ZEBRA","ALERT","BRAVE","CHAOS","DREAM","ELITE","FLAME","GRACE","HEART","IMAGE","JAZZY","KINGS","LOVER","MUSIC","NIGHT","OCEAN","PANDA","QUEEN","RADIO","SUNNY","TIGER","UNITY","VIBES","WORLD","YOUTH","ZESTY","AMAZE","BLISS","CHEER","DELUX","EAGER","FANCY","GREAT","HAPPY","IDEAL","JOLLY","KINDS","LUCKY","MERRY"];
 
@@ -18,28 +21,37 @@ export class GameServiceService {
   currentWord: string = "";
 
   getWord():string{
-    return this.words[Math.floor(Math.random()*this.words.length)];
+    let word = this.words[Math.floor(Math.random()*this.words.length)];
+    console.log(word);
+    return word;
   }
 
   makeGuess(guess:string){
-    this.guesses.push(guess);
+    let guessCaps = guess.toUpperCase();
+    console.log(`guessing ${guessCaps}`);
+    this.guesses.push(guessCaps);
+    console.log(this.checkGuess(guessCaps));
   }
 
   checkGuess(word:string){
     let returnArray: number[] = [];
 
     let letters = word.split('');
+    console.log(letters);
 
+    let i = 0;
     letters.forEach(letter => {
-      if (this.currentWord.includes(letter) && letter.indexOf(letter) == this.currentWord.indexOf(letter)){
+
+      if (this.currentWord.includes(letter) && i === this.currentWord.indexOf(letter)){
         returnArray.push(2);
       }
-      else if (this.guesses.includes(letter)){
+      else if (this.currentWord.includes(letter) && i != this.currentWord.indexOf(letter)){
         returnArray.push(1);
       }
       else{
         returnArray.push(0);
       }
+      i++;
     })
 
     let score = returnArray.reduce((a,b) => a+b, 0);
@@ -54,10 +66,10 @@ export class GameServiceService {
   }
 
   Win(){
-    
+    console.log("You Win!");
   }
 
   Lose(){
-
+    console.log("You Lose!");
   }
 }

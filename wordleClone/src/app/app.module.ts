@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LetterGridComponent } from './letter-grid/letter-grid.component';
 import { LetterBoxComponent } from './letter-box/letter-box.component';
 import { LetterRowComponent } from './letter-row/letter-row.component';
+import { GameServiceService } from './game-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { LetterRowComponent } from './letter-row/letter-row.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [GameServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
