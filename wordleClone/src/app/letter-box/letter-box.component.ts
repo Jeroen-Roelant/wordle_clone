@@ -31,7 +31,6 @@ export class LetterBoxComponent implements OnInit, OnChanges {
   }
 
   private updateContentAndStatus(): void {
-    console.log(this.id, this.rId);
     this.content = (this.gameService.wordleObjects[this.rId] && this.gameService.wordleObjects[this.rId].letters) 
       ? this.gameService.wordleObjects[this.rId].letters[this.id] || ''
       : '';
