@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-letter-row',
@@ -11,5 +11,7 @@ export class LetterRowComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input() id: number = 0;
 
 }

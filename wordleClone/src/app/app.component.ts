@@ -9,6 +9,8 @@ import { GameServiceService } from './game-service.service';
 export class AppComponent {
   title = 'wordleClone';
 
+  
+
   constructor(public gameService: GameServiceService){
   }
 

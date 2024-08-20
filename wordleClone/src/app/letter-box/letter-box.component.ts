@@ -1,29 +1,44 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
+import { GameServiceService } from '../game-service.service';
 
 @Component({
   selector: 'app-letter-box',
   templateUrl: './letter-box.component.html',
   styleUrls: ['./letter-box.component.css']
 })
-export class LetterBoxComponent implements OnInit {
+export class LetterBoxComponent implements OnInit, OnChanges {
+// export class LetterBoxComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService: GameServiceService) { }
 
   ngOnInit(): void {
-
+    this.gameService.wordleObjectsUpdated.subscribe((wordleObjects) => {
+      this.updateContentAndStatus();
+    });
   }
+  
+  @Input() id: number = 0;
+  @Input() rId: number = 0;
 
-  @Input() letter: string = "";
-  @Input() correctLetter: string = "";
+  content?: string;
+  status?: number;
 
-  status: number = 0;
-
-  checkLetter() {
-    if (this.letter == this.correctLetter) {
-      this.status = 1;
-    } else {
-      this.status = 2;
+    
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.gameService.wordleObjects) {
+      this.updateContentAndStatus();
     }
   }
 
+  private updateContentAndStatus(): void {
+    console.log(this.id, this.rId);
+    this.content = (this.gameService.wordleObjects[this.rId] && this.gameService.wordleObjects[this.rId].letters) 
+      ? this.gameService.wordleObjects[this.rId].letters[this.id] || ''
+      : '';
+
+    this.status = (this.gameService.wordleObjects[this.rId] && this.gameService.wordleObjects[this.rId].colors)
+      ? this.gameService.wordleObjects[this.rId].colors[this.id] || 0
+      : 0;
+    // this.changeDetectorRef.detectChanges()
+  }
 }
