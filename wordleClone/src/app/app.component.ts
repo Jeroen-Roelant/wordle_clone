@@ -15,7 +15,7 @@ export class AppComponent {
   guess: string = "";
 
   makeGuess(){
-    if((<HTMLInputElement>document.getElementById('textInput')).value.length === 5){
+    if((<HTMLInputElement>document.getElementById('textInput')).value.length === 5 && !this.gameService.finished){
       const word = (<HTMLInputElement>document.getElementById('textInput')).value;
       (<HTMLInputElement>document.getElementById('textInput')).value = "";
       this.gameService.makeGuess(word);

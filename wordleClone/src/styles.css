@@ -50,3 +50,12 @@ div.entry button:enabled:hover{
 div.entry button:disabled{
     opacity: 0.5;
 }
+
+footer{
+    margin-top: 160px;
+}
+
+footer a{
+    color: rgb(206, 206, 206);
+    font-family: 'Arial', Arial, sans-serif;
+}
