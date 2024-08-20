@@ -7,13 +7,17 @@ import { LetterBoxComponent } from './letter-box/letter-box.component';
 import { LetterRowComponent } from './letter-row/letter-row.component';
 import { GameServiceService } from './game-service.service';
 import { FormsModule } from '@angular/forms';
+import { WinComponent } from './win/win.component';
+import { LoseComponent } from './lose/lose.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LetterGridComponent,
     LetterBoxComponent,
-    LetterRowComponent
+    LetterRowComponent,
+    WinComponent,
+    LoseComponent
   ],
   imports: [
     BrowserModule,
