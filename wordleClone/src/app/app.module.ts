@@ -6,6 +6,7 @@ import { LetterGridComponent } from './letter-grid/letter-grid.component';
 import { LetterBoxComponent } from './letter-box/letter-box.component';
 import { LetterRowComponent } from './letter-row/letter-row.component';
 import { GameServiceService } from './game-service.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GameServiceService } from './game-service.service';
     LetterRowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [GameServiceService],
   bootstrap: [AppComponent]

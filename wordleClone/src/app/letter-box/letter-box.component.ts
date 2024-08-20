@@ -38,6 +38,5 @@ export class LetterBoxComponent implements OnInit, OnChanges {
     this.status = (this.gameService.wordleObjects[this.rId] && this.gameService.wordleObjects[this.rId].colors)
       ? this.gameService.wordleObjects[this.rId].colors[this.id] || 0
       : 0;
-    // this.changeDetectorRef.detectChanges()
   }
 }

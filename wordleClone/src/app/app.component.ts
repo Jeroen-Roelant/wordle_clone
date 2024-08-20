@@ -7,17 +7,19 @@ import { GameServiceService } from './game-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wordleClone';
-
-  
+  title = 'Wordle 2';
 
   constructor(public gameService: GameServiceService){
   }
 
+  guess: string = "";
+
   makeGuess(){
-    const word = (<HTMLInputElement>document.getElementById('textInput')).value;
-    this.gameService.makeGuess(word);
+    if((<HTMLInputElement>document.getElementById('textInput')).value.length === 5){
+      const word = (<HTMLInputElement>document.getElementById('textInput')).value;
+      (<HTMLInputElement>document.getElementById('textInput')).value = "";
+      this.gameService.makeGuess(word);
+    }
   }
-  
 }
 

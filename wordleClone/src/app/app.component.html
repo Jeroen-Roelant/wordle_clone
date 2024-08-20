@@ -1,6 +1,6 @@
 <h1> wordle 2: electric boogaloo </h1>
 <app-letter-grid></app-letter-grid>
 <div class="entry">
-    <input id="textEntry" type="text" id="textInput">
-    <button id="entryBtn" (click)="makeGuess();">Submit</button>
+    <input [(ngModel)]="guess" (keydown.enter)="makeGuess();" id="textEntry" type="text" id="textInput" maxlength="5" autocomplete="off">
+    <button id="entryBtn" (click)="makeGuess();" [disabled]="guess.length < 5">Submit</button>
 </div>
