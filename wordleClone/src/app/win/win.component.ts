@@ -17,4 +17,14 @@ export class WinComponent implements OnInit {
   word: string = this.gameService.currentWord;
   guesses: number = this.gameService.guesses.length;
 
+  newGame(){
+    window.location.reload();;
+  }
+
+  goToPortfolio(){
+    window.open("https://jeroenroelant.tech", "_blank");
+  }
+
+
+
 }
