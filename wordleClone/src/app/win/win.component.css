@@ -1,5 +1,5 @@
 .img{
-    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/939459365866855720/BB1E7C5F450610F971A4E6C4DC5EC28DEC378617/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
+    background-image: url('https://cdn.discordapp.com/attachments/1052353180664614982/1275802750378184857/download.gif?ex=66c73766&is=66c5e5e6&hm=f1ac9c9656dd8767203f8bd7fea551a0da96c1f08b7d79be25e003e38f16c450&');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,8 +19,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 10px;
-    padding: 2em 2em 2em 2em;
+    border-radius: 16px;
+    padding: 8px 8px 8px 8px;
 }
 
 h2, p{
