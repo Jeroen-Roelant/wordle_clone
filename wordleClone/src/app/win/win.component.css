@@ -1,12 +1,12 @@
 .img{
-    background-image: url('https://cdn.discordapp.com/attachments/1052353180664614982/1275802750378184857/download.gif?ex=66c73766&is=66c5e5e6&hm=f1ac9c9656dd8767203f8bd7fea551a0da96c1f08b7d79be25e003e38f16c450&');
+    background-image: url('https://media.discordapp.net/attachments/697864237992771596/884153772417351690/tumblr_p16bm4OCja1skn1oxo1_500.gif?ex=66c6e49e&is=66c5931e&hm=4c91df05a687bbde9383c980d33e4309058ee4cbccd2e58d64de73ae759808c5&');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 240px;
+    width: 300px;
     height: 240px;
     /* border-radius: 100%; */
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 }
 
 .winScreen{

@@ -20,6 +20,7 @@ export class GameServiceService {
 
   getWord():string{
     let word = this.words[Math.floor(Math.random()*this.words.length)].toUpperCase();
+    console.log("helaba hier niet kijken, dit is enkel maar voor mij als ik test!! het woord is " + word);
     return word;
   }
 
